@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Marks</title>
+    <link rel="stylesheet" href="{% static 'input.css' %}">
+</head>
+<body>
+    <div class="container marks-container">
+        <h2>Enter Your Marks</h2>
+        <form id="marks-form" method="post" class="prediction-form">
+            {% csrf_token %}
+            
+            <label for="board">Select Your Board</label>
+            {{ form.board }}
+            {{ form.board.errors }}
+
+            <label for="physics_marks">Physics Marks</label>
+            {{ form.physics_marks }}
+            {{ form.physics_marks.errors }}
+
+            <label for="mathematics_marks">Mathematics Marks</label>
+            {{ form.maths_marks }}
+            {{ form.maths_marks.errors }}
+
+            <label for="chemistry_marks">Chemistry Marks</label>
+            {{ form.chemistry_marks }}
+            {{ form.chemistry_marks.errors }}
+
+            <label for="keam_score">KEAM Marks</label>
+            {{ form.keam_score }}
+            {{ form.keam_score.errors }}
+
+            <label for="preferred_branch">Preferred Branch</label>
+            {{ form.preferred_branch }}
+            {{ form.preferred_branch.errors }}
+
+            <label for="college_type">College Type</label>
+            {{ form.college_type }}
+            {{ form.college_type.errors }}
+
+            <label for="preferred_college">Preferred College </label>
+            {{ form.preferred_college }}
+            {{ form.preferred_college.errors }}
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div class="feedback-message" id="feedback-message"></div>
+    </div>
+</body>
+</html>

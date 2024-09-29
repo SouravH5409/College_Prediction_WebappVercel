@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'predictor/result.css' %}">
+</head>
+<body>
+
+    <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+
+    <main class="container">
+        <h2>Prediction Results</h2>
+        <br>
+
+        <h3>{{ admission_message }}</h3>
+        
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>College Name</th>
+                    <th>Closing Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if top_colleges %}
+                    {% for result in top_colleges %}
+                    <tr>
+                        <td>{{ result.college_name }}</td>                                            
+                        <td>{{ result.closing_rank }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="5">No results found.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <br>
+        <h3 class="predicted-rank">Your Predicted Rank: {{ predicted_rank }}</h3>
+        <p class="redirect-message">Want to make another prediction? <a href="{% url 'predict_form' %}">Click here</a>.</p>
+    </main>
+
+</body>
+</html>
