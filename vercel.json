@@ -13,7 +13,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "imgview/wsgi.py"
+            "dest": "college_pred/wsgi.py"
         },
         {
             "src": "/static/(.*)",
