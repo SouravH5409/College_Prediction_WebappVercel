@@ -1,9 +1,6 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -11,12 +8,23 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: block; /* Remove flexbox */
+    position: relative; /* Set the position to relative for child centering */
 }
 
 html, body {
     width: 100%;
     height: auto; /* Allow height to adjust based on content */
-    overflow-x: auto; /* Enable horizontal scrolling only when needed */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+/* Form Container */
+.container {
+    max-width: 100%; /* Set the width to 100% to ensure responsiveness */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Form Styles */
@@ -28,7 +36,7 @@ form {
     width: 90%;  /* Responsive width */
     max-width: 430px;  /* Maximum width for larger screens */
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 0 auto; /* Center the form horizontally */
 }
 
 h2 {
@@ -91,7 +99,6 @@ input.error {
     form {
         width: 95%; /* Adjust width for smaller screens */
         padding: 15px; /* Reduce padding if necessary */
-        margin: 0;
     }
 
     h2 {
@@ -123,17 +130,3 @@ input.error {
         font-size: 14px;
     }
 }
-
-/* Additional Styles */
-.feedback-message {
-    color: red;
-    margin-top: 10px;
-    text-align: center;
-    display: none;
-}
-
-input.error {
-    border-color: red; 
-}
-
-/* Ensure the entire form scales without overflow */
