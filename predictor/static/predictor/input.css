@@ -28,7 +28,7 @@ form {
     width: 90%;  /* Responsive width */
     max-width: 430px;  /* Maximum width for larger screens */
     box-sizing: border-box;
-    margin: 20px auto;
+    margin: 0 20px;
 }
 
 h2 {
