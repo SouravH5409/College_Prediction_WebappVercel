@@ -11,15 +11,16 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;  /* Make background fixed */
-    overflow-x: hidden;  /* Prevent horizontal scrolling */
+    background-attachment: fixed;
+    overflow-x: auto; /* Allow horizontal scrolling */
 }
 
 .container.marks-container {
-    margin-top: 50px;  /* Add some space at the top */
+    margin-top: 50px;
     padding: 20px;
     width: 100%;
     max-width: 450px;
+    overflow-x: auto;  /* Allow horizontal scrolling for container */
 }
 
 form {
@@ -27,14 +28,15 @@ form {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;  /* Full width on smaller screens */
-    max-width: 430px;  /* Maximum width for larger screens */
+    width: 100%;  
+    max-width: 430px;
     box-sizing: border-box;
+    overflow-x: auto; /* Allow horizontal scrolling for form */
 }
 
 h2 {
     margin-bottom: 20px;
-    margin-top: 0;  /* Remove any unexpected margin from the top */
+    margin-top: 0;
     font-size: 24px;
     text-align: center;
     color: #333;
@@ -47,7 +49,7 @@ label {
 }
 
 input, select {
-    width: 100%;  /* Ensure inputs take full width */
+    width: 100%; 
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
@@ -62,7 +64,7 @@ input:focus, select:focus {
 }
 
 button {
-    width: 100%;  /* Full width for buttons */
+    width: 100%; 
     padding: 12px;
     background-color: #007BFF;
     color: white;
@@ -88,6 +90,7 @@ input.error {
     border-color: red; 
 }
 
+/* Responsive design */
 @media (max-width: 768px) {
     form {
         width: 100%;
@@ -124,7 +127,8 @@ input.error {
     }
 }
 
-/* Ensure the entire form scales without overflow */
+/* Prevent overflow */
 html, body {
     max-width: 100%;
+    overflow-x: auto; /* Allow scroll horizontally */
 }
