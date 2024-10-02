@@ -1,42 +1,21 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240415/pngtree-glasses-and-stack-of-hardcover-books-image_15655261.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: block; /* Remove flexbox */
-    position: relative; /* Set the position to relative for child centering */
 }
 
-html, body {
-    width: 100%;
-    height: auto; /* Allow height to adjust based on content */
-    overflow-x: hidden; /* Disable horizontal scrolling */
-}
-
-/* Form Container */
-.container {
-    max-width: 100%; /* Set the width to 100% to ensure responsiveness */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Form Styles */
 form {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 25px;
+    background-color: white;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 90%;  /* Responsive width */
-    max-width: 430px;  /* Maximum width for larger screens */
-    box-sizing: border-box;
-    margin: 0 auto; /* Center the form horizontally */
+    width: 430px;
+    max-width: 90%;
 }
 
 h2 {
@@ -52,8 +31,8 @@ label {
     display: block;
 }
 
-input, select {
-    width: 100%;  /* Ensure inputs take full width */
+input {
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
@@ -62,14 +41,14 @@ input, select {
     transition: border 0.3s;
 }
 
-input:focus, select:focus {
+input:focus {
     border-color: #007BFF;
     outline: none;
 }
 
 button {
-    width: 100%;  /* Full width for buttons */
-    padding: 12px;
+    width: 100%;
+    padding: 10px;
     background-color: #007BFF;
     color: white;
     border: none;
@@ -94,39 +73,18 @@ input.error {
     border-color: red; 
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     form {
-        width: 95%; /* Adjust width for smaller screens */
-        padding: 15px; /* Reduce padding if necessary */
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    input, select {
-        padding: 8px;
-    }
-
-    button {
-        padding: 10px;
-        font-size: 14px;
+        width: 90%;
     }
 }
 
-@media (max-width: 400px) {
-    form {
-        width: 100%;
-        padding: 10px;
-    }
+form select[name="preferred_branch"],
+form select[name="college_type"],
+form select[name="preferred_college"] {
+    margin-bottom: 15px; 
+}
 
-    input, select {
-        padding: 6px;
-    }
-
-    button {
-        padding: 8px;
-        font-size: 14px;
-    }
+form select[name="board"] {
+    margin-bottom: 15px; 
 }
