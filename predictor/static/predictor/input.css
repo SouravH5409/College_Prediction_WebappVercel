@@ -9,13 +9,13 @@ body {
     background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240415/pngtree-glasses-and-stack-of-hardcover-books-image_15655261.jpg');
 }
 
-form {
+.container {
     background-color: white;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Adjusted width for smaller screens */
-    max-width: 70%; /* Allow the form to resize on smaller screens */
+    width: 300px; /* Fixed width for larger screens */
+    max-width: 90%; /* Adjusted max-width for responsiveness */
 }
 
 h2 {
