@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height to maintain full height */
     margin: 0;
     padding: 0;
     background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240415/pngtree-glasses-and-stack-of-hardcover-books-image_15655261.jpg');
@@ -15,7 +15,7 @@ form {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 90vw; /* Use viewport width for responsiveness */
+    width: 90%; /* Use percentage for better responsiveness */
     max-width: 430px; /* Limit max width for larger screens */
     box-sizing: border-box; /* Include padding in width */
 }
@@ -77,10 +77,17 @@ input.error {
     border-color: red; 
 }
 
+/* Media Query Adjustments */
 @media (max-width: 400px) {
+    body {
+        padding: 10px; /* Add padding to prevent overflow */
+    }
+
     form {
-        width: 90vw; /* Ensure full width on small screens */
+        width: 90%; /* Ensure full width on small screens */
         padding: 20px; /* Reduce padding for smaller screens */
+        max-height: 90vh; /* Limit max height to prevent overflow */
+        overflow-y: auto; /* Allow scrolling if content overflows */
     }
 
     h2 {
