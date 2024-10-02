@@ -127,5 +127,4 @@ input.error {
 /* Ensure the entire form scales without overflow */
 html, body {
     max-width: 100%;
-    overflow-x: hidden;
 }
