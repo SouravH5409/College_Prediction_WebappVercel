@@ -15,7 +15,7 @@ form {
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 300px; /* Adjusted width for smaller screens */
-    max-width: 90%; /* Allow the form to resize on smaller screens */
+    max-width: 70%; /* Allow the form to resize on smaller screens */
 }
 
 h2 {
