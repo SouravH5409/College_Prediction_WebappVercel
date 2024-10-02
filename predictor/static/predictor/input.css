@@ -6,7 +6,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240415/pngtree-glasses-and-stack-of-hardcover-books-image_15655261.jpg');
     background-size: cover;
     background-position: center;
@@ -28,6 +28,7 @@ form {
     width: 90%;  /* Responsive width */
     max-width: 430px;  /* Maximum width for larger screens */
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 h2 {
