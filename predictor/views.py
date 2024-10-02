@@ -51,7 +51,7 @@ def user_input_view(request):
 
             total_pcm_marks = physics_marks + chemistry_marks + maths_marks
 
-            board_choices = ['State', 'CBSE', 'ICSE']  
+            board_choices = ['STATE', 'CBSE', 'ICSE']  
             if board in board_choices:
                 stream_index = board_choices.index(board)  
                 predicted_rank = predict_rank(physics_marks, chemistry_marks, maths_marks, keam_score, stream_index)
