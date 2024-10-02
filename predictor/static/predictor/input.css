@@ -11,7 +11,15 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;  /* Make background fixed */
     overflow-x: hidden;  /* Prevent horizontal scrolling */
+}
+
+.container.marks-container {
+    margin-top: 50px;  /* Add some space at the top */
+    padding: 20px;
+    width: 100%;
+    max-width: 450px;
 }
 
 form {
@@ -26,6 +34,7 @@ form {
 
 h2 {
     margin-bottom: 20px;
+    margin-top: 0;  /* Remove any unexpected margin from the top */
     font-size: 24px;
     text-align: center;
     color: #333;
