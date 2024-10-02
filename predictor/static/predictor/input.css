@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -10,6 +11,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
 }
 
 form {
@@ -17,8 +19,8 @@ form {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 430px;
-    max-width: 100%;
+    width: 100%;  /* Full width on smaller screens */
+    max-width: 430px;  /* Maximum width for larger screens */
     box-sizing: border-box;
 }
 
@@ -36,7 +38,7 @@ label {
 }
 
 input, select {
-    width: 100%;
+    width: 100%;  /* Ensure inputs take full width */
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
@@ -51,7 +53,7 @@ input:focus, select:focus {
 }
 
 button {
-    width: 100%;
+    width: 100%;  /* Full width for buttons */
     padding: 12px;
     background-color: #007BFF;
     color: white;
@@ -79,7 +81,7 @@ input.error {
 
 @media (max-width: 768px) {
     form {
-        width: 90%;
+        width: 100%;
         padding: 20px;
     }
 
@@ -99,7 +101,7 @@ input.error {
 
 @media (max-width: 400px) {
     form {
-        width: 95%;
+        width: 100%;
         padding: 15px;
     }
 
@@ -111,4 +113,10 @@ input.error {
         padding: 8px;
         font-size: 14px;
     }
+}
+
+/* Ensure the entire form scales without overflow */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
