@@ -9,13 +9,13 @@ body {
     background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240415/pngtree-glasses-and-stack-of-hardcover-books-image_15655261.jpg');
 }
 
-.container {
+form {
     background-color: white;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Fixed width for larger screens */
-    max-width: 90%; /* Adjusted max-width for responsiveness */
+    width: 430px;
+    max-width: 90%;
 }
 
 h2 {
@@ -31,8 +31,7 @@ label {
     display: block;
 }
 
-input,
-form select {
+input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -42,8 +41,7 @@ form select {
     transition: border 0.3s;
 }
 
-input:focus,
-form select:focus {
+input:focus {
     border-color: #007BFF;
     outline: none;
 }
@@ -77,11 +75,16 @@ input.error {
 
 @media (max-width: 400px) {
     form {
-        width: 90%; /* Ensures the form fits well on smaller screens */
+        width: 90%;
     }
-    
-    input,
-    form select {
-        margin: 10px 0; /* Consistent margin for input and select elements */
-    }
+}
+
+form select[name="preferred_branch"],
+form select[name="college_type"],
+form select[name="preferred_college"] {
+    margin-bottom: 15px; 
+}
+
+form select[name="board"] {
+    margin-bottom: 15px; 
 }
