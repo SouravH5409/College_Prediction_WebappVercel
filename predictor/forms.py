@@ -3,12 +3,14 @@ from .utils import get_college_choices, get_branch_choices
 
 class UserInputForm(forms.Form):
     BOARD_CHOICES = [
+        (None, 'Select an option'),
         ('CBSE', 'CBSE'),
         ('ICSE', 'ICSE'),
         ('STATE', 'State Board'),
     ]
     
     COLLEGE_TYPE_CHOICES = [
+        (None, 'Select College Type'),
         ('G', 'Government'),
         ('S', 'Self-Financed'),
         ('N', 'College Run by Government Institution'),

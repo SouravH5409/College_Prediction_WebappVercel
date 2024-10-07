@@ -125,17 +125,19 @@ def results_view(request):
 
     if user_input:
         predicted_rank = user_input['predicted_rank']
-        preferred_college_id = int(user_input['preferred_college'])
+        preferred_college_id = user_input['preferred_college']
         preferred_branch_id = int(user_input['branch'])
         college_type = user_input['college_type']
 
         admission_message = "Less chance of getting into preferred college."
 
         if preferred_college_id and preferred_branch_id:
+            preferred_college_id_int = int(user_input['preferred_college'])
+
             rank_response = supabase \
                 .table('rankdetails') \
                 .select('closing_rank') \
-                .eq('college_id', preferred_college_id) \
+                .eq('college_id', preferred_college_id_int) \
                 .eq('branch_id', preferred_branch_id) \
                 .eq('year', 2019) \
                 .execute()
@@ -148,6 +150,9 @@ def results_view(request):
                     admission_message = "High chance of getting into preferred college and branch."
                 else:
                     admission_message = "Less chance of getting into preferred college."
+
+        elif not preferred_college_id:
+            admission_message = "No preferred college selected. Please choose a college to check chances of admission."
 
         rank_details_response = supabase \
             .from_("rank_college_details") \

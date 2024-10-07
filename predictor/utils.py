@@ -8,11 +8,11 @@ key = os.getenv('DB_KEY')
 supabase: Client = create_client(url, key)
 
 def get_college_choices():
-    response = supabase.table('colleges').select('college_id', 'college_name').execute()
+    response = supabase.table('colleges').select('college_id', 'college_name').order('college_name').execute()
     colleges = response.data
-    return [(college['college_id'], college['college_name']) for college in colleges]
+    return [(None, 'Select a college')] + [(college['college_id'], college['college_name']) for college in colleges]
 
 def get_branch_choices():
-    response = supabase.table('branches').select('branch_id', 'branch_name').execute()
+    response = supabase.table('branches').select('branch_id', 'branch_name').order('branch_name').execute()
     branches = response.data
-    return [(branch['branch_id'], branch['branch_name']) for branch in branches]
+    return [(None, 'Select a branch')] + [(branch['branch_id'], branch['branch_name']) for branch in branches]
