@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-type:cover;
     background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240415/pngtree-glasses-and-stack-of-hardcover-books-image_15655261.jpg');
 }
 
