@@ -6,7 +6,21 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240415/pngtree-glasses-and-stack-of-hardcover-books-image_15655261.jpg');
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -77,6 +91,4 @@ input.error {
     .container {
         width: 90%;
     }
-    
 }
-
